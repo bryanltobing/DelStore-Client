@@ -1,4 +1,4 @@
-import { Switch } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import loadable from '@loadable/component'
 import PublicRoute from './PublicRoute'
 import VerifiedRoute from './VerifiedRoute'
@@ -14,28 +14,20 @@ const RegisterPages = loadable(
   () => import('pages/Register/Register'),
   fallbackTemp
 )
+const LandingPagePages = loadable(
+  () => import('pages/LandingPage/LandingPage'),
+  fallbackTemp
+)
 
-const Route = props => {
+const Routes = props => {
   return (
     <Switch>
       <PublicRoute path="/login" exact component={LoginPages} />
       <PublicRoute path="/register" exact component={RegisterPages} />
 
-      <VerifiedRoute
-        path="/"
-        exact
-        component={() => (
-          <button
-            onClick={() => {
-              logout()
-            }}
-          >
-            Logout
-          </button>
-        )}
-      />
+      <Route path="/" exact component={LandingPagePages} />
     </Switch>
   )
 }
 
-export default Route
+export default Routes

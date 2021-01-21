@@ -5,12 +5,14 @@ const RegisterHeader = () => {
   const { Logo, H2Title, PInfo } = classes
   return (
     <div>
-      <img
-        className={Logo}
-        src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-        alt="Workflow"
-      />
-      <h2 className={H2Title}>Del Store</h2>
+      <Link to="/">
+        <img
+          className={Logo}
+          src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+          alt="Workflow"
+        />
+        <h2 className={H2Title}>Del Store</h2>
+      </Link>
       <p className={PInfo}>
         <Link
           to="/register"

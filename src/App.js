@@ -1,13 +1,13 @@
-import history from 'helpers/history';
-import { Router } from 'react-router-dom';
-import Route from 'routes';
+import history from 'helpers/history'
+import { Router } from 'react-router-dom'
+import Routes from 'routes'
 
 function App() {
   return (
     <Router history={history}>
-      <Route />
+      <Routes />
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App
