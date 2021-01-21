@@ -3,6 +3,7 @@ import loadable from '@loadable/component'
 import PublicRoute from './PublicRoute'
 import VerifiedRoute from './VerifiedRoute'
 import FallbackTemp from 'components/_common/Loading/FallbackTemp'
+import { logout } from 'fetcher/auth'
 
 const fallbackTemp = {
   fallback: <FallbackTemp />,
@@ -23,7 +24,15 @@ const Route = props => {
       <VerifiedRoute
         path="/"
         exact
-        component={() => <div>Verified route</div>}
+        component={() => (
+          <button
+            onClick={() => {
+              logout()
+            }}
+          >
+            Logout
+          </button>
+        )}
       />
     </Switch>
   )

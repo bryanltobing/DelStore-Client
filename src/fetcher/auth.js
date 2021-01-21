@@ -1,5 +1,5 @@
 import authRequest from 'apis/authRequest'
-import { createCookie } from 'helpers/cookies'
+import { createCookie, eraseCookie } from 'helpers/cookies'
 import history from 'helpers/history'
 
 export const Login = async (
@@ -57,4 +57,9 @@ export const Register = async (
     setIsLoading(false)
     setSubmitError(err.response.data?.message)
   }
+}
+
+export const logout = () => {
+  eraseCookie('authToken')
+  history.push('/login')
 }
