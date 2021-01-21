@@ -7,7 +7,7 @@ const AuthPhoneNumberInput = props => {
   return (
     <div>
       {props.error && (
-        <Text size="xs" color="red-500" weight="medium">
+        <Text size="text-xs" color="text-red-500" weight="font-medium">
           {props.error}
         </Text>
       )}

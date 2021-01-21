@@ -108,7 +108,12 @@ const LoginBody = () => {
       </form>
 
       {submitError !== '' && (
-        <Snackbar text={submitError} color="red-600" timeout={3000} />
+        <Snackbar
+          text={submitError}
+          color="text-red-600"
+          borderColor="border-red-600"
+          timeout={3000}
+        />
       )}
     </>
   )

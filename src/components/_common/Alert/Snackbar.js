@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-const Snackbar = ({ text, color, timeout }) => {
+const Snackbar = ({ text, color, borderColor, timeout }) => {
   const { MainContainer, Text } = classes
   const [animate, setAnimate] = useState(true)
   const [active, setActive] = useState(true)
@@ -34,7 +34,7 @@ const Snackbar = ({ text, color, timeout }) => {
     <>
       {active && (
         <div
-          className={MainContainer(color, animate)}
+          className={MainContainer(color, animate, borderColor)}
           onMouseEnter={stopAnimate}
           onMouseLeave={startAnimate}
         >
@@ -46,8 +46,8 @@ const Snackbar = ({ text, color, timeout }) => {
 }
 
 const classes = {
-  MainContainer: (color, animate) =>
-    `absolute top-0 right-20 h-12 w-auto px-3 border-2 rounded-md border-${color} text-${color} ${
+  MainContainer: (color, animate, borderColor) =>
+    `absolute top-0 right-20 h-12 w-auto px-3 border-2 rounded-md ${color} ${borderColor}  ${
       animate && 'animate-pulse cursor-default'
     }`,
   Text: 'flex flex-column items-center justify-center h-full cursor-default',

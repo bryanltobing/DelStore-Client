@@ -43,7 +43,7 @@ export const Register = async (
   try {
     setSubmitError('')
     setIsLoading(true)
-    const response = await authRequest.post('/register', {
+    await authRequest.post('/register', {
       name,
       email,
       phoneNumber,
