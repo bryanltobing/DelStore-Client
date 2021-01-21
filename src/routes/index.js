@@ -9,11 +9,17 @@ const fallbackTemp = {
 }
 
 const LoginPages = loadable(() => import('pages/Login/Login'), fallbackTemp)
+const RegisterPages = loadable(
+  () => import('pages/Register/Register'),
+  fallbackTemp
+)
 
 const Route = props => {
   return (
     <Switch>
       <PublicRoute path="/login" exact component={LoginPages} />
+      <PublicRoute path="/register" exact component={RegisterPages} />
+
       <VerifiedRoute
         path="/"
         exact

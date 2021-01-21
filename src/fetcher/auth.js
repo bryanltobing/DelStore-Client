@@ -32,3 +32,29 @@ export const Login = async (
     console.log(err.response.data)
   }
 }
+
+export const Register = async (
+  name,
+  email,
+  phoneNumber,
+  password,
+  [setIsLoading, setSubmitError]
+) => {
+  try {
+    setSubmitError('')
+    setIsLoading(true)
+    const response = await authRequest.post('/register', {
+      name,
+      email,
+      phoneNumber,
+      password,
+      role: 'user',
+    })
+    setIsLoading(false)
+
+    history.push('/login')
+  } catch (err) {
+    setIsLoading(false)
+    setSubmitError(err.response.data?.message)
+  }
+}

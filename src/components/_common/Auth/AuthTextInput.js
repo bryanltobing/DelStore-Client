@@ -1,5 +1,6 @@
 import React from 'react'
 import { Text } from '../Typography/Typography'
+import PropTypes from 'prop-types'
 
 const AuthTextInput = ({
   valueInput,
@@ -46,6 +47,16 @@ const classes = {
         ? 'bg-gray-300 animate-pulse text-gray-300 placeholder-gray-300 border-gray-300 focus:border-gray-300 cursor-default'
         : 'text-gray-900 placeholder-gray-500'
     }`,
+}
+
+AuthTextInput.propTypes = {
+  valueInput: PropTypes.any.isRequired,
+  setValue: PropTypes.func.isRequired,
+  trim: PropTypes.bool,
+  name: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  isLoading: PropTypes.bool,
+  placeholder: PropTypes.string,
 }
 
 export default AuthTextInput
