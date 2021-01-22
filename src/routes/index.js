@@ -1,4 +1,4 @@
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 import loadable from '@loadable/component'
 import PublicRoute from './PublicRoute'
 import VerifiedRoute from './VerifiedRoute'
@@ -43,6 +43,7 @@ const Routes = props => {
         exact
         component={() => <div>Verified user only</div>}
       />
+      <Redirect from="*" to="/" />
     </Switch>
   )
 }
