@@ -4,16 +4,16 @@ const TopNavigationItems = [
     name: 'Product',
   },
   {
+    linkTo: '/facility',
+    name: 'Facility',
+  },
+  {
     linkTo: '/features',
     name: 'Features',
   },
   {
-    linkTo: '/marketplace',
-    name: 'Marketplace',
-  },
-  {
-    linkTo: '/company',
-    name: 'Company',
+    linkTo: '/dashboard',
+    name: 'Dashboard',
   },
 ]
 

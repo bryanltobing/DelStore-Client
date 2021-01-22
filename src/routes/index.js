@@ -23,6 +23,10 @@ const ProductPages = loadable(
   () => import('pages/Product/Product'),
   fallbackTemp
 )
+const FacilityPages = loadable(
+  () => import('pages/Facility/Facility'),
+  fallbackTemp
+)
 
 const Routes = props => {
   return (
@@ -32,6 +36,13 @@ const Routes = props => {
 
       <Route path="/" exact component={LandingPagePages} />
       <OpenRoute path="/product" exact component={ProductPages} />
+      <OpenRoute path="/facility" exact component={FacilityPages} />
+
+      <VerifiedRoute
+        path="/dashboard"
+        exact
+        component={() => <div>Verified user only</div>}
+      />
     </Switch>
   )
 }
