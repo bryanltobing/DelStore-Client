@@ -4,6 +4,7 @@ import PublicRoute from './PublicRoute'
 import VerifiedRoute from './VerifiedRoute'
 import FallbackTemp from 'components/_common/Loading/FallbackTemp'
 import { logout } from 'fetcher/auth'
+import OpenRoute from './OpenRoute'
 
 const fallbackTemp = {
   fallback: <FallbackTemp />,
@@ -18,6 +19,10 @@ const LandingPagePages = loadable(
   () => import('pages/LandingPage/LandingPage'),
   fallbackTemp
 )
+const ProductPages = loadable(
+  () => import('pages/Product/Product'),
+  fallbackTemp
+)
 
 const Routes = props => {
   return (
@@ -26,6 +31,7 @@ const Routes = props => {
       <PublicRoute path="/register" exact component={RegisterPages} />
 
       <Route path="/" exact component={LandingPagePages} />
+      <OpenRoute path="/product" exact component={ProductPages} />
     </Switch>
   )
 }

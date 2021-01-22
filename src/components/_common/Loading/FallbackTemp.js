@@ -1,10 +1,10 @@
 import React from 'react'
 
-const FallbackTemp = () => {
+const FallbackTemp = ({ display }) => {
   return (
-    <div className={classes.MainContainer}>
+    <div className={classes.MainContainer(display)}>
       <img
-        className={classes.Loading}
+        className={classes.Loading(display)}
         src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
         alt="Workflow"
       />
@@ -13,8 +13,12 @@ const FallbackTemp = () => {
 }
 
 const classes = {
-  MainContainer: 'flex flex-column justify-center items-center h-screen',
-  Loading: 'animate-spin mx-auto w-auto',
+  MainContainer: display =>
+    display === 'block'
+      ? 'max-w-7x mx-auto'
+      : 'flex flex-column justify-center items-center h-screen',
+  Loading: display =>
+    `animate-spin mx-auto w-auto ${display === 'block' && 'w-2/4 mt-3'}`,
 }
 
 export default FallbackTemp

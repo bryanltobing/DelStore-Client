@@ -17,6 +17,7 @@ const TopNavigation = () => {
             <img
               className="h-8 w-auto sm:h-10"
               src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+              alt="logo"
             />
           </Link>
           <div className="-mr-2 flex items-center md:hidden">
@@ -51,6 +52,7 @@ const TopNavigation = () => {
           <Link
             to={item.linkTo}
             className="font-medium text-gray-500 hover:text-gray-900"
+            key={item.linkTo}
           >
             {item.name}
           </Link>
